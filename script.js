@@ -1,23 +1,22 @@
-
 let name = document.getElementById("name").value;
 let year = document.getElementById("year").value;
-let h3 = document.getElementById("url");
 
-document.getElementById("button").addEventListener("click", callbutton) 
-
+document.getElementById("button").addEventListener("click", callbutton)
 
 function callbutton() {
+name = document.getElementById("name").value;
+year = document.getElementById("year").value;
 
-	  let h3 = document.createElement("h3");
-	let Name = document.createElement("h3");
-	Name.innerText = "name= " + name;
+let h3 = document.createElement("h3");
+let Name = document.createElement("h3");
+Name.innerText = "Name: " + name;
 
-	let Year = document.createElement("h3");
-	year.innerText = "year= " + year;
+let Year = document.createElement("h3");
+Year.innerText = "Year: " + year;
 
-	h3.append(Name);
-	h3.append(Year);
+h3.append(Name);
+h3.append(Year);
 
-	document.querySelector("#url").append(h3);
-	
+document.querySelector("#url").textContent += "?" + "name=" + name + "&year=" + year;
+document.querySelector("#url").append(h3);
 }
