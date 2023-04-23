@@ -10,10 +10,10 @@ function callbutton() {
 
 	  let h3 = document.createElement("h3");
 	let Name = document.createElement("h3");
-	Name.innerText = "name" + name;
+	Name.innerText = "name= " + name;
 
 	let Year = document.createElement("h3");
-	year.innerText = "year" + year;
+	year.innerText = "year= " + year;
 
 	h3.append(Name);
 	h3.append(Year);
