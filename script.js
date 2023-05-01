@@ -1,22 +1,26 @@
 let name = document.getElementById("name").value;
 let year = document.getElementById("year").value;
 
-document.getElementById("button").addEventListener("click", callbutton)
+let button = document.getElementById("button");
 
-function callbutton() {
+button.addEventListener("click",(e)=>btnfun(e));
+
+function btnfun(e){
+e.preventDefault();
 name = document.getElementById("name").value;
 year = document.getElementById("year").value;
+let queryString = 'https://localhost:8080/';
+let h3 = document.getElementById("url");
+if(name!=""){
+queryString += "?name="+name;
+if(year!=""){
+queryString += "&year="+year;
+}
+}else if(year !=""){
+queryString += "?year="+year;
+}
 
-let h3 = document.createElement("h3");
-let Name = document.createElement("h3");
-Name.innerText = "Name: " + name;
+h3.innerText = queryString;
 
-let Year = document.createElement("h3");
-Year.innerText = "Year: " + year;
-
-h3.append(Name);
-h3.append(Year);
-
-document.querySelector("#url").textContent += "?" + "name=" + name + "&year=" + year;
-document.querySelector("#url").append(h3);
+// document.querySelector("#url").append(h3);
 }
